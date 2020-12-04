@@ -21,16 +21,14 @@ $retraite = 55;
 
 $age = 60;
 
-if ($age > $retraite) {
-
-    $difference = $retraite - $age;
-    echo "vous êtes à la retraite depuis ".$difference." années";
-}else if ($age < $retraite){
+if ($age < 0) {
+    echo "Vous ne pouvez pas avoir un âge négatif.";
+}else if ($age > $retraite) {
     $difference = $age - $retraite;
-    echo "Il vous reste ".$difference." avant la retraite";
-}else if ($age == $retraite){
-    echo "La retraite c'est cette année";
-}elseif ($age < 0) {
-    echo "Vous ne pouvez pas avoir un âge négatif";
+    echo "Vous êtes à la retraite depuis $difference ans.";
+}else if ($age < $retraite){
+    $difference = $retraite - $age;
+    echo "Il vous reste $difference ans avant la retraite.";
+}else {
+    echo "La retraite c'est cette année.";
 }
-
