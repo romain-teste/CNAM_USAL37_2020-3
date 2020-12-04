@@ -8,7 +8,7 @@ SI l'âge fourni est supérieur à l'âge de la retraite
 SINON SI l'âge fourni ($age) est inférieur à l'âge de la retraite ($retraite)
         SI l'âge est inférieur à 0 
             afficher "un peu jeune pour penser à la retraite !"
-        SINON SI l'âge est inférieur à 18
+        SINON SI l'âge est inférieur à 18 
             afficher "vous pas être né"
         SINON 
             afficher (echo) "Il vous reste X années  avant la retraite"
