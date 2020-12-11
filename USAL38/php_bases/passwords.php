@@ -1,2 +1,2 @@
 <?php 
-echo hash('azerty', 'sha256');
+echo password_hash('azerty', PASSWORD_BCRYPT);
