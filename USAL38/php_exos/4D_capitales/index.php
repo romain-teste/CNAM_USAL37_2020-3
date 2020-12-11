@@ -3,6 +3,7 @@
 $pays = [
     'France' => 'Paris',
     'Belgique' => 'Bruxelles',
+    
 ];
 
 // array_key_exists()
@@ -10,9 +11,11 @@ $pays = [
 
 function capitalCity(string $nom_pays)
 {
-    // A vous de jouer !
-
-    return "";  // le nom de la capitale
+    if (array_key_exists($nom_pays, $pays)){
+        return $pays[$nom_pays];
+    }elseif (empty($pays[$nom_pays])){
+        return "Capitale inconnue";
+    } 
 }
 
 
