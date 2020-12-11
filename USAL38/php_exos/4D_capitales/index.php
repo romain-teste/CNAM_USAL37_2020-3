@@ -21,4 +21,4 @@ function capitalCity(string $nom_pays)
 
 echo capitalCity('France'); // affiche Paris
 echo capitalCity('Belgique'); // affiche Bruxelles
-echo capitalCity('Suisse'); // affiche Capitale inconnue
+echo capitalCity('Suisse'); // affiche Capitale inconnu
