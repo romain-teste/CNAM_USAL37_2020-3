@@ -23,6 +23,7 @@ $retraite = 55;
 
 $age = -12;
 
+<<<<<<< HEAD
 
 
 if($age > $retraite) { 
@@ -49,3 +50,19 @@ else {
 
 echo "\n FIN";
 
+=======
+if ($age < 0) {
+    echo "Vous pas être né.";
+}else if ($age > $retraite) {
+    $difference = $age - $retraite;
+    echo "Vous êtes à la retraite depuis $difference ans.";
+}else if ($age < $retraite){
+    if ($age == 18){
+        echo "un peu jeune pour pencer a la retraite";
+    }else { 
+    $difference = $retraite - $age;
+    echo "Il vous reste $difference ans avant la retraite.";}
+}else {
+    echo "La retraite c'est cette année.";
+}
+>>>>>>> aa4a8ee4e361346c1a88db3c387c274f4c2c107c
