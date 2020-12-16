@@ -11,9 +11,10 @@ $pays = [
 
 function capitalCity(string $nom_pays)
 {
+    global $pays;
     if (array_key_exists($nom_pays, $pays)){
         return $pays[$nom_pays];
-    }elseif (empty($pays[$nom_pays])){
+    }else{
         return "Capitale inconnue";
     } 
 }
@@ -21,4 +22,4 @@ function capitalCity(string $nom_pays)
 
 echo capitalCity('France'); // affiche Paris
 echo capitalCity('Belgique'); // affiche Bruxelles
-echo capitalCity('Suisse'); // affiche Capitale inconnu
+echo capitalCity('Suisse'); // affiche Capitale inconnue
