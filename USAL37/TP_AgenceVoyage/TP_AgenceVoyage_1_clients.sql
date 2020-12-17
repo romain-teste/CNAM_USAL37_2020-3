@@ -88,7 +88,15 @@ values
 /* afficher : les voyage avec le nom du client associé*/
 
 select *from trips
-join oreders on trips.trip_code = orders.trip_code
+join orders on trips.trip_code = orders.trip_code
 join clients on orders.client_id = clients.client_id;
+
+select *from trips
+left join orders on trips.trip_code = orders.trip_code
+left join clients on orders.client_id = clients.client_id;
+
+select *from trips
+right join orders on trips.trip_code = orders.trip_code
+right join clients on orders.client_id = clients.client_id;
 
 
