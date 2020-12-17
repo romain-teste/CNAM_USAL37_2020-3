@@ -65,10 +65,30 @@ SELECT client_id, client_lastname, client_email, client_phone, client_added, com
 SELECT * FROM clients 
 JOIN sales ON clients.com_code = sales.com_code; 
 
+CREATE TABLE orders
+(
+   trip_code INT,
+   client_id INT,
+   order_quantity INT NULL,
+   order_paid TINYINT(1) NULL,
+   PRIMARY KEY(trip_code, client_id)
+);
 
-/*
+alter table orders
+	add constraint fk_orders_trips FOREIGN KEY(trip_code) REFERENCES trips(trip_code),
+    add constraint fk_orders_client FOREIGN KEY(client_id) REFERENCES clients(client_id);
+    
+insert into orders
+(trip_code, client_id, order_quantity, order_paid)
+values
+('1', '5', '2', 1),
+('2', '5', '3', 0),
+('3', '1', '2', 1);
+
+/* afficher : les voyage avec le nom du client associé*/
+
+select *from trips
+join oreders on trips.trip_code = orders.trip_code
+join clients on orders.client_id = clients.client_id;
 
 
-
-
-*/
