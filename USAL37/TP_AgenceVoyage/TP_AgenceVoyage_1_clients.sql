@@ -5,6 +5,7 @@
 	Chaque client est associé à un commercial différent 
     
 3) 	Sélectionnez tous les clients (nom du commercial associé inclus)
+<<<<<<< Updated upstream
 
 
 SUITE 
@@ -98,5 +99,60 @@ left join clients on orders.client_id = clients.client_id;
 select *from trips
 right join orders on trips.trip_code = orders.trip_code
 right join clients on orders.client_id = clients.client_id;
+=======
+*/
+
+USE usal37_agence;
+
+DROP table IF EXISTS sales;
+
+CREATE TABLE if not exists sales
+(
+	com_code char(5),
+    com_name varchar (64) not null,
+    com_password char(60) not null,
+    primary key (com_code)
+);
+
+DROP table IF EXISTS clients;
+CREATE TABLE if not exists clients
+(
+	client_id int auto_increment,
+    client_lastname varchar(32) not null,
+    client_firstname varchar(32) not null,
+    client_email varchar(128) not null,
+    client_phone char(16),
+    client_added date,
+    client_password varchar(60),
+    com_code char(5),
+    primary key (client_id)
+); 
+
+ALTER TABLE clients 
+ADD CONSTRAINT fk_clients_sales FOREIGN KEY (com_code) REFERENCES sales(com_code);
+
+
+insert into sales
+(com_code, com_name, com_password)
+values
+('UGIT7','DUPONT','AZZAAA'),
+('AZER5','DUC','ERRTTT'),
+('HPOS9','VICTOR','AZERT'),
+('PSVR3','BEGANOVIC','12345T'),
+('XFRP6','TESTE','HJYT78');
+
+insert into clients
+(client_lastname, client_firstname, client_email, client_phone, client_added, client_password, com_code)
+values
+('julien', 'echaud', 'ju.ec@gmail.com', '+33745673456', now(), 'JGFHJ7','UGIT7'),
+('margaux', 'eric', 'ma.er@gmail.com', '+33654782367', now(), 'MLKJH','AZER5'),
+('Loic', 'espin', 'lo.ES@gmail.com', '+33645986483', now(), 'KJHGTGVCF','HPOS9'),
+('dani', 'papa', 'da.pa@gmail.com', '+33723649045', now(), 'KJSUZD9','PSVR3'),
+('laura', 'ville', 'la.vi@gmail.com', '+33689452389', now(), 'JHSDT6S','XFRP6');
+
+select * from clients
+join sales on clients.com_code = sales.com_code
+
+>>>>>>> Stashed changes
 
 

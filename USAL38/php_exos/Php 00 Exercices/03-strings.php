@@ -2,7 +2,7 @@
 
 //3.A
 function getMC2(){
-    return "Albert Einstein";
+    echo("Albert Einstein");
 }
 
 echo getMC2();
