@@ -8,7 +8,7 @@ CREATE TABLE customers_cats
 (
 	cat_id INT PRIMARY KEY AUTO_INCREMENT,
     cat_name VARCHAR(50) NOT NULL,
-    cat_description TEXT NOT NULL
+    cat_description TEXT NULL
 );
 
 CREATE TABLE customers
@@ -19,14 +19,14 @@ CREATE TABLE customers
     cat_id INT
 );
 
-CREATE TABLE jods
+CREATE TABLE jobs
 (
 	job_id INT PRIMARY KEY AUTO_INCREMENT,
     job_state CHAR(10) NOT NULL,
     job_title VARCHAR(100) NOT NULL,
-    job_start DATETIME NOT NULL,
-    job_end DATETIME NOT NULL,
-    job_description TEXT NOT NULL,
+    job_start DATETIME NULL,
+    job_end DATETIME NULL,
+    job_description TEXT NULL,
     customer_id INT
 );
 
@@ -36,8 +36,8 @@ CREATE TABLE quotes
     quote_state CHAR(10) NOT NULL,
     quote_date DATE NOT NULL,
     quote_amount INT NOT NULL,
-    quote_final_date DATE NOT NULL,
-    quote_final_amount INT NOT NULL,
+    quote_final_date DATE NULL,
+    quote_final_amount INT NULL,
     job_id INT
 );
 
