@@ -9,6 +9,7 @@ function siMajor($age) {
 
 siMajor(12);
 
+
 //4.B
 $age= 0;
 $retraite= 60;
@@ -28,3 +29,24 @@ function getRetired ($age, $retraite){
 }
 
 getRetired ($age, $retraite);
+
+
+// 4.C
+$un = 100;
+$deux = 100;
+$trois = 300.4;
+
+function getMax($un, $deux, $trois) {
+    if ($un == $deux || $un == $trois || $trois == $deux){
+        echo("0");
+    } else if ($un > $deux && $un > $trois) {
+        echo($un);
+    } else if ($deux > $un && $deux > $trois) {
+        echo($deux);
+    } else if ($trois > $un && $trois > $deux) {
+        echo($trois);
+    }
+}
+
+getMax($un, $deux, $trois);
+
